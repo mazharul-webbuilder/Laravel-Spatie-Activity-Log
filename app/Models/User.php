@@ -7,10 +7,31 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+// Below code for Spatie Activity log
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
+
+
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    /*============================================================*/
+// Below code for Spatie Activity log
+    use LogsActivity;
+    // use this name for logging
+    public function getLogNameToUse(string $eventName = ''): string
+    {
+        return 'User';
+    }
+    // the filed that will add in activity properties
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+            ->logOnly(['name', 'email']);
+    }
+    /*============================================================*/
+
 
     /**
      * The attributes that are mass assignable.
