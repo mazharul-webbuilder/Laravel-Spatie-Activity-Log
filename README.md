@@ -36,6 +36,8 @@
     }
 </li>
 <li>Check web.php file and User Model to confirm</li>
+<li>To reuse code use this advance useages</li>
+<li>Just add Loggable.php as a trait on your application, and just use the trait into your Model, dont need to call anything from your model, just use the Loggable trait.</li>
 </ul>
 <h5>Author: Mazharul Islam</h5>
 <h6>mazharulislam1998r@gmail.com</h6>
