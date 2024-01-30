@@ -38,6 +38,11 @@
 <li>Check web.php file and User Model to confirm</li>
 <li>To reuse code use this advance useages</li>
 <li>Just add Loggable.php as a trait on your application, and just use the trait into your Model, dont need to call anything from your model, just use the Loggable trait.</li>
+<li>Syntax with specific guard: // Log an activity for the 'admin' guard
+activity()->useLog('admin')->log('Some activity for admin user');
+
+// Log an activity for the 'user' guard
+activity()->useLog('user')->log('Some activity for user');</li>
 </ul>
 <h5>Author: Mazharul Islam</h5>
 <h6>mazharulislam1998r@gmail.com</h6>
